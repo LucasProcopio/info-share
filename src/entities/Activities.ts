@@ -1,4 +1,8 @@
+import { v4 } from 'uuid';
+
 class Activities {
+  id: string;
+
   title: string;
 
   body: string;
@@ -24,10 +28,15 @@ class Activities {
     isPublic,
   }: Omit<
     Activities,
-    'timecreated' | 'timeupdated' | 'contributorsIDs' | 'isExpired' | 'version'
+    | 'id'
+    | 'timecreated'
+    | 'timeupdated'
+    | 'contributorsIDs'
+    | 'isExpired'
+    | 'version'
   >) {
     const currentDate = new Date();
-
+    this.id = v4();
     this.title = title;
     this.body = body;
     this.authorID = authorID;
