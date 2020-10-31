@@ -1,52 +1,34 @@
-import { v4 } from 'uuid';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-class Activities {
+@Entity('activities')
+export default class Activities {
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @Column()
   title: string;
 
+  @Column()
   body: string;
 
+  @Column('timestamp')
   timecreated: Date;
 
+  @Column('timestamp')
   timeupdated: Date;
 
+  @Column('int')
   authorID: number;
 
+  @Column('int')
   isPublic: number;
 
+  @Column()
   contributorsIDs: string;
 
+  @Column('smallint')
   isExpired: number;
 
+  @Column('smallint')
   version: number;
-
-  constructor({
-    title,
-    body,
-    authorID,
-    isPublic,
-  }: Omit<
-    Activities,
-    | 'id'
-    | 'timecreated'
-    | 'timeupdated'
-    | 'contributorsIDs'
-    | 'isExpired'
-    | 'version'
-  >) {
-    const currentDate = new Date();
-    this.id = v4();
-    this.title = title;
-    this.body = body;
-    this.authorID = authorID;
-    this.isPublic = isPublic;
-    this.timecreated = currentDate;
-    this.timeupdated = currentDate;
-    this.contributorsIDs = '';
-    this.isExpired = 0;
-    this.version = 1.0;
-  }
 }
-
-export default Activities;
