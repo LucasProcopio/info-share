@@ -1,7 +1,7 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-@Entity('activities')
-export default class Activities {
+@Entity('activity_history')
+export default class ActivityHistory {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 

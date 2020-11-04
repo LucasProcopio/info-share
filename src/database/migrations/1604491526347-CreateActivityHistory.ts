@@ -1,11 +1,11 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export default class CreateActivities1604139732521
+export default class CreateActivityHistory1604491526347
   implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.createTable(
+    return queryRunner.createTable(
       new Table({
-        name: 'activities',
+        name: 'activity_history',
         columns: [
           {
             name: 'id',
@@ -25,11 +25,6 @@ export default class CreateActivities1604139732521
           },
           {
             name: 'timecreated',
-            type: 'timestamp',
-            default: 'now()',
-          },
-          {
-            name: 'timeupdated',
             type: 'timestamp',
             default: 'now()',
           },
@@ -64,6 +59,6 @@ export default class CreateActivities1604139732521
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('activities');
+    return queryRunner.dropTable('activity_history');
   }
 }

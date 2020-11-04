@@ -7,9 +7,8 @@
     "build": "tsc",
     "dev:server": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
     "migration:create": "typeorm migration:create -n",
-    "migration:down": "ts-node-dev ./node_modules/typeorm/cli.js migration:down",
-    "migration:up": "ts-node-dev ./node_modules/typeorm/cli.js migration:up",
-    "migration:run": "ts-node-dev ./node_modules/typeorm/cli.js migration:run"
+    "migration:down": "ts-node-dev ./node_modules/typeorm/cli.js migration:revert",
+    "migration:up": "ts-node-dev ./node_modules/typeorm/cli.js migration:run"
   },
   "keywords": [],
   "author": "",

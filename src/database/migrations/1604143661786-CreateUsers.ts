@@ -35,7 +35,6 @@ export default class CreateUsers1604143661786 implements MigrationInterface {
           {
             name: 'activities_ids',
             type: 'varchar',
-            default: '',
           },
           {
             name: 'timecreated',
