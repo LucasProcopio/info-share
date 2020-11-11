@@ -12,6 +12,7 @@ export default class CreateActivities1604139732521
             type: 'varchar',
             isPrimary: true,
             generationStrategy: 'uuid',
+            default: 'uuid_generate_v4()',
           },
           {
             name: 'title',
